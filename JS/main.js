@@ -1,9 +1,13 @@
 $(document).ready(function(){
 
-  $("dropdownMenu1").click();
+ $('nav li ul').hide().removeClass('fallback');
 
-  function showMenu() {
-    console.log("menu clicked");
-    $("dropdown-menu").addClass("#dropdownMenu1:active")
-  }
+  $('nav li').hover(
+  function () {
+    $('ul', this).stop().slideDown(100);
+  },
+  function () {
+    $('ul', this).stop().slideUp(100);
+  });
+ 
 });
